@@ -1,0 +1,32 @@
+.TodoInsert {
+  display: grid;
+  background: #495057;
+  grid-template-columns: 1fr 3.5rem;
+
+  input {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding: 0.5rem;
+    color: white;
+
+    &::placeholder {
+      color: #dee2e6;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    background: #868e96;
+    line-height: 1.5rem;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      background: #adb5bd;
+    }
+  }
+}

@@ -6,9 +6,15 @@ import EventPractice from './components/EventPractice';
 import ValidationSample from './components/ValidationSample';
 import UserList from './components/UserList';
 import CreateUser from './components/CreateUser';
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import RefLocal from './components/RefLocal';
 import RefLocal2 from './components/RefLocal2';
+import Timer from './components/Timer';
+
+function countActiveUsers(users){
+  console.log('활성 사용자 수를 카운트');
+  return users.filter(user => user.active).length;
+}
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -39,8 +45,12 @@ function App() {
       username,
       email
     };
+
+    // setUsers(...users,user);
+
     // users.push(user);
     // setUsers(users);
+
     setUsers(users.concat(user));
     nextId.current += 1;
     setInputs({ username: '', email: '' })
@@ -63,8 +73,15 @@ function App() {
     setUsers(users.map(user => user.id === id ? { ...user, active: !user.active } : { ...user }
     ))
   }
+  const[showTimer,setShowTimer] = useState(false);
+  const count = useMemo(() =>countActiveUsers(users),[users]);
   return (
+    
     <div className="App">
+      {/* {showTimer && <Timer/>}
+      <button onClick={()=>{
+        setShowTimer(!showTimer)
+      }}>토글 타이머</button> */}
       {/* <InputSample/>
       <EventHandling/>
       <EventPractice/> */}
@@ -72,8 +89,10 @@ function App() {
       {/* <ValidationSample/> */}
       <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}></CreateUser>
       <UserList users={users} onToggle={onToggle} onDelete={onDelete} />
-      <RefLocal/>
-      <RefLocal2/>
+      {/* <RefLocal/>
+      <RefLocal2/> */}
+      <div>사용자 수 : {count}</div>
+
     </div>
   )
 };

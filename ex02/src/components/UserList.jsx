@@ -1,6 +1,8 @@
 import React from 'react'
+import { useEffect } from 'react'
 
 const UserList = ({ users, onDelete, onToggle }) => {
+  
   return (
     <div>
       {users.map(user => (
@@ -11,6 +13,23 @@ const UserList = ({ users, onDelete, onToggle }) => {
 }
 
 const User = ({ user, onDelete, onToggle }) => {
+  // useEffect(()=>  {
+  //   console.log('컴포넌트가 화면에 나타남');
+  //   return () =>{
+  //     console.log('컴포넌트가 화면에 사라짐')
+  //   }
+  // },[]); //dependency array(deps)
+
+  // useEffect(()=>{
+  //   console.log('user : ');
+  //   return () =>{
+  //     console.log('user값 바뀌기 전...');
+  //   }
+  // },[user])
+
+  // useEffect(()=>{
+  //   console.log(user);
+  // })
   return (
     <div>
       <b style={
