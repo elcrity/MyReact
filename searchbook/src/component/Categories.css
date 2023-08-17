@@ -1,0 +1,37 @@
+.categoriesBlock{
+  display: flex;
+  width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  @media screen and (max-width:768px) {
+    width: 100%;
+    overflow: auto;
+  }
+}
+
+.category{
+  font-size: 1.125rem;
+  cursor: pointer;
+  color:inherit;
+  padding-bottom: 0.25rem;
+  margin-left: 1rem;
+}
+
+.category a{
+  text-decoration: none;
+  color: black;
+}
+
+.category:hover{
+  color: #b0b8cf;
+}
+
+.category .active{
+  color: #22b8cf;
+  border-bottom: 2px solid;
+}
+
+.category .active:hover{
+  color: #abdfe6;
+}
