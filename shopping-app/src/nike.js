@@ -1,4 +1,4 @@
-let nike = [
+[
   {
       id: 1,
       title: "에어 줌 인피니티 투어 넥스트",
@@ -20,7 +20,4 @@ let nike = [
       content: "남성신발",
       price: 219000
   }
-    
 ]
-
-export default nike;

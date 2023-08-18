@@ -1,0 +1,32 @@
+.App{
+  text-align: center;
+}
+
+.bg{
+  height: 500px;
+  background-image: url('./img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.slider{
+  height: 500px;
+  background-image: url('../public/img/slider.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.col-md-4 img{
+  width: 80%;
+}
+
+.c1{
+  text-decoration: none;
+  color: #000;
+}
+.c1:hover{
+  color: green;
+}
+.btn{
+  margin-left: 10px;
+}
