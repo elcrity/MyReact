@@ -1,21 +1,56 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { Nav } from 'react-bootstrap'
+import { Button, Nav } from 'react-bootstrap'
 import Test from '../components/Test';
+import styled from 'styled-components'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store';
+
+const Box = styled.div`
+padding : 20px;
+color:gray;
+`
+
+const YellowBtn = styled.button`
+background-color: gold;
+color: white;
+font-size: 30px;
+padding 100px;
+border : 1px solid #ccc;
+background-image: url("https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80");
+background-size: cover;
+background-position:center;
+width:100%;
+height:200px
+`
 
 const Detail = ({ props }) => {
+
 
   let { id } = useParams();
   id = parseInt(id || 0);
   const { title, content, price, imgUrl } = props.find(item => id === item.id);
   // const { title, content, price, imgUrl} = props.filter(item => id === item.id)[0];
-
+  const dispatch = useDispatch();
   const [tap, setTap] = useState(0);
+  const [fade, setFade] = useState('');
+
+  useEffect(() => {
+    setFade('end');
+    return () => {
+      setFade('');
+    }
+  },[])
 
   return (
     <div className='container'>
       <div className='row'>
+        <div className={'container start ' + fade}>
+          <Box>
+            <YellowBtn>지금 구매시 10% 할인!</YellowBtn>
+          </Box>
+        </div>
         <div className='col-md-6'>
           <img src={"../" + imgUrl} alt={title} width='95%' />
         </div>
@@ -23,8 +58,16 @@ const Detail = ({ props }) => {
           <h4 className='pt-5'>{title}</h4>
           <p>{content}</p>
           <p>{price}</p>
-          <button className='btn btn-danger'>주문하기</button>
+          <button className='btn btn-danger' onClick={()=>{
+            dispatch(addItem({
+              id:id, imgUrl:imgUrl, price: price, title: title, count :1
+            }))
+          }}>주문하기</button>
+          <Link to ='/cart'>
+          <Button variant='outline-success'>주문상품 확인하기</Button>
+        </Link>
         </div>
+        
       </div>
       <Nav variant='tabs' defaultActiveKey='link0'>
         <Nav.Item>

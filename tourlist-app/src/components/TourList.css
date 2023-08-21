@@ -1,0 +1,78 @@
+.tourSpot {
+  height: 100%;
+}
+
+.list-head {
+  height: 100px;
+}
+
+.list-head h1 {
+  height: 40px;
+}
+
+.list-head-intro {
+  margin: 10px;
+}
+
+.list-content {
+  height: 700px;
+  display: grid;
+  grid-template-columns: minmax(600px, 50%) 50%;
+}
+
+.list-contentList {
+  background-color: antiquewhite;
+}
+
+.list-contentList-ul {
+  height: 680px;
+  margin: 0;
+  padding: 0 10px;
+  overflow-y: auto;
+}
+
+.list-contentList-ul::-webkit-scrollbar {
+  display: none;
+}
+
+.list-contentList-paging {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.list-contentList-paging a{
+  color: black;
+}
+.list-contentList-paging a:focus{
+  font-weight: bold;
+}
+
+.currentPage{
+  height: 20px;
+  text-align: center;
+}
+
+.list-itemGrid {
+  display: grid;
+  grid-template-columns: minmax(195px, 30%) 70%;
+
+}
+
+.list-itemGrid-img {
+  margin-top: 5px;
+  width: 190px;
+  height: auto;
+}
+
+.list-itemGrid-img img {
+  width: 190px;
+  height: 120px;
+}
+
+.list-itemGrid-content {
+  text-align: left;
+}
+

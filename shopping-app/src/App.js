@@ -40,7 +40,7 @@ function App() {
         </Route>
       </Routes>
       {/* <div className='bg' style={{backgroundImage:'url('+bg+')'}}></div> */}
-      <Cart></Cart>
+      {/* <Cart></Cart> */}
     </div>
   );
 }

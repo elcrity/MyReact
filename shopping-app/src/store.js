@@ -43,27 +43,27 @@ const cart = createSlice({
   reducers: {
     addCount(state, action) {
       const num = state.findIndex((a) => {
-        return a.id === action.payload.id;;
+        return a.id === action.payload;
       });
       console.log(num);
       state[num].count++;
     },
     decreaseCount(state, action) {
       const num = state.findIndex((a) => {
-        return a.id === action.payload.id;
+        return a.id === action.payload;
       });
       if (state[num].count > 0) state[num].count--;
       else if (state[num] === 0) alert('카트에 담긴 상품의 수량이 0개입니다.')
     },
     removeItem(state, action) {
       let num = state.findIndex((a)=>{
-        return a.id === action.payload.id;
+        return a.id === action.payload;
       });
       state.splice(num,1);
     },
     addItem(state, action){
       let num = state.findIndex((a)=>{
-        return a.id === action.payload.id;
+        return a.id === action.payload;
       })
       if(num !== -1){
         state[num].count++

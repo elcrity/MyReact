@@ -1,0 +1,30 @@
+* {
+  list-style: none;
+  margin: 1px 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.header {
+  height: 90px;
+  width: 95%;
+  margin: 0px auto;
+  border: 1px solid black;
+  display: fixed;
+}
+
+.main {
+  width: 95%;
+  height: 850px;
+  margin: 0px auto;
+  border: 1px solid red;
+  overflow-x : hidden;
+  overflow-y : hidden;
+}
+
+.footer {
+  height: 100px;
+  width: 95%;
+  margin: 0px auto;
+  border: 1px solid black;
+}
