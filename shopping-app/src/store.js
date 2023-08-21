@@ -23,19 +23,19 @@ const cart = createSlice({
   initialState: [
     {
       id: 0,
-      name: "White and Black",
+      title: "White and Black",
       imgUrl: "img/shoes1.jpg",
       count: 2
     },
     {
       id: 1,
-      name: "Red Knit",
+      title: "Red Knit",
       imgUrl: "img/shoes2.jpg",
       count: 1
     },
     {
       id: 2,
-      name: "Grey Yordan",
+      title: "Grey Yordan",
       imgUrl: "img/shoes3.jpg",
       count: 1
     }
@@ -43,27 +43,27 @@ const cart = createSlice({
   reducers: {
     addCount(state, action) {
       const num = state.findIndex((a) => {
-        return a.id === action.payload;
+        return a.id === action.payload.id;;
       });
       console.log(num);
       state[num].count++;
     },
     decreaseCount(state, action) {
       const num = state.findIndex((a) => {
-        return a.id === action.payload
+        return a.id === action.payload.id;
       });
       if (state[num].count > 0) state[num].count--;
       else if (state[num] === 0) alert('카트에 담긴 상품의 수량이 0개입니다.')
     },
     removeItem(state, action) {
       let num = state.findIndex((a)=>{
-        return a.id === action.payload
+        return a.id === action.payload.id;
       });
       state.splice(num,1);
     },
     addItem(state, action){
       let num = state.findIndex((a)=>{
-        return a.id === action.payload
+        return a.id === action.payload.id;
       })
       if(num !== -1){
         state[num].count++

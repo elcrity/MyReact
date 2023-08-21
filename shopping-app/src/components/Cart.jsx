@@ -6,11 +6,11 @@ import { addCount,decreaseCount, removeItem } from '../store'
 const Cart = () => {
   const state = useSelector((state) => state)
   const dispatch = useDispatch();
-  console.log('state: ', state.cart[0].name);
+  console.log('state: ', state.cart[0].title);
 
   return (
     <div>
-      <h5>{state.user.name} {state.user.age}</h5>
+      <h5 className='p-5'>{state.user.name} {state.user.age}</h5>
       <Table>
         <thead>
           <tr>
@@ -24,10 +24,10 @@ const Cart = () => {
         <tbody>
           {
             state.cart.map((a, i) =>
-              <tr key={i}>
-                <td>{state.cart[i].id +1}</td>
-                <td>{<img src={state.cart[i].imgUrl} alt={state.cart[i].id} width='50%' />}</td>
-                <td>{state.cart[i].name}</td>
+              <tr key={i} className='align-middle ' >
+                <td >{state.cart[i].id +1}</td>
+                <td>{<img src={state.cart[i].imgUrl} alt={state.cart[i].id} width='200px'/>}</td>
+                <td>{state.cart[i].title}</td>
                 <td>{state.cart[i].count}</td>
                 <td><Button onClick={()=>{
                   dispatch(addCount(state.cart[i].id))
