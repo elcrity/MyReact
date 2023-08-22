@@ -3,7 +3,7 @@ import { useState } from 'react'
 // import './TourList.css'
 
 const TourItem = ({spot}) => {
-  console.log('spot: ', spot);
+  // console.log('spot: ', spot);
 
   
   return (

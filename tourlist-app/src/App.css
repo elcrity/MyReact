@@ -13,6 +13,10 @@
   display: fixed;
 }
 
+.header span{
+  margin : 5px 5px;
+}
+
 .main {
   width: 95%;
   height: 850px;

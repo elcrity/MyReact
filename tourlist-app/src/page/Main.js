@@ -11,7 +11,9 @@ const Main = () => {
   return (
    <div className='main'>
       <Routes>
-        <Route path='/test1' element={<TourList data={tourSpots} />}></Route>
+        <Route path='/test1/1?type=list' element={<TourList data={tourSpots} />}></Route>
+        <Route path='/test1/1?type=grid' element={<TourList data={tourSpots} />}></Route>
+        <Route path='/test1/1' element={<TourList data={tourSpots} />}></Route>
         <Route path='/test1/2' element={<TourList  data={restaurant}/>}></Route>
         <Route path='/test1/3' element={<TourList data={lodge} />}></Route>
         <Route path='/test2' element={<TourGrid/>}></Route>
