@@ -18,8 +18,8 @@
 }
 
 .main {
-  width: 95%;
-  height: 850px;
+  width: minmax(1200px, 98%);
+  height: auto;
   margin: 0px auto;
   border: 1px solid red;
   overflow-x : hidden;

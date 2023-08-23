@@ -1,26 +1,23 @@
-import React from 'react'
-import {Routes, Route} from 'react-router-dom'
-import TourList from '../components/TourList'
+import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import TourList from './TourList'
+import TourSpot from '../tourSpot.json'
 import TourGrid from '../components/TourGrid'
-import DetailInfo from '../components/DetailInfo'
-import tourSpots from '../tourSpot.json'
+import DetailInfo from './DetailInfo'
+// import tourSpots from '../tourSpot.json'
 import restaurant from '../restaurant.json'
 import lodge from '../lodge .json'
+import axios from 'axios'
 
 const Main = () => {
   return (
-   <div className='main'>
+    <div className='main'>
       <Routes>
-        <Route path='/test1/1?type=list' element={<TourList data={tourSpots} />}></Route>
-        <Route path='/test1/1?type=grid' element={<TourList data={tourSpots} />}></Route>
-        <Route path='/test1/1' element={<TourList data={tourSpots} />}></Route>
-        <Route path='/test1/2' element={<TourList  data={restaurant}/>}></Route>
-        <Route path='/test1/3' element={<TourList data={lodge} />}></Route>
-        <Route path='/test2' element={<TourGrid/>}></Route>
-        <Route path='/test3' element={<DetailInfo/>}></Route>
+        <Route path='/test1/:pageId' element={<TourList data={TourSpot}/>}></Route>
+        <Route path='/test1/detail' element={<DetailInfo />}></Route>
       </Routes>
-   </div>
-    
+    </div>
+
   )
 }
 
