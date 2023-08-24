@@ -1,16 +1,17 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
 
 const TourItem = ({spot,pageType,navigate}) => {
+  const photo = spot.repPhoto;
   
   const onNav = () =>{
-    navigate('/test1/detail',{
+    navigate(`/test1/detail/${spot.contentsid}`,{
       state : {
         title : spot.title,
-        img : spot.repPhoto.photoid.imgpath,
+        img : photo.photoid.imgpath,
         tag : spot.tag,
         address : spot.address,
-        phoneno : spot.phoneno
+        phoneno : spot.phoneno,
+        content : spot.introduction,
       }
     })
   }
@@ -18,12 +19,12 @@ const TourItem = ({spot,pageType,navigate}) => {
   return (
     <li className={`${pageType}-itemGrid`} onClick={onNav}>
       <div className={`${pageType}-itemGrid-img`}>
-        <img src={spot.repPhoto.photoid.thumbnailpath} alt={spot.photoid} width={'200px'} height={'100px'}/>
+        <img src={photo.photoid.thumbnailpath} alt={photo.descseo} width={'200px'} height={'100px'}/>
       </div>
       <div className={`${pageType}-itemGrid-content`}>
         <h4>{spot.title}</h4>
         <p>{spot.region1cd.label} > {spot.region2cd.label}</p>
-        <p>{spot.tag.split(', ').map(tag => ('#' + tag + ' '))}</p>
+        <p>{spot.tag.replace(/, /gi, ',').split(',').map(tag => ('#' + tag + ' '))}</p>
       </div>
     </li>
   )

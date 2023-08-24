@@ -38,7 +38,7 @@
   }
 
   &-content {
-    height: 600px;
+    height: auto;
     display: grid;
     grid-template-columns: minmax(600px, 50%) 50%;
 
@@ -96,6 +96,7 @@
     }
   }
 }
+
 
 .grid {
   height: 100%;
@@ -195,5 +196,28 @@
 
   &-content-map {
     display: none;
+  }
+}
+
+.loading{
+  
+  height: 600px;
+  text-align: center;
+
+  &Icon{
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    position: fixed;
+    animation: spinCircle 2s infinite linear;
+  }
+}
+
+@keyframes spinCircle {
+  from {
+      transform:rotate(0);
+  }
+  to {
+      transform:rotate(360deg);
   }
 }

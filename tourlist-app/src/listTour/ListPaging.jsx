@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 
 const ListPaging = (pageprops) => {
   const {page, setPage, lastPage} = pageprops
-  console.log(lastPage);
+  // console.log(lastPage);
   const onSetPage = (e) => {
     e.preventDefault();
     setPage(parseInt(e.target.text));

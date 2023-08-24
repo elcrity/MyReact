@@ -39,7 +39,7 @@ const TagBtn = (tag) => {
     // console.log('tagSet: ', tagSet);
 
     for (let i = 0; i < 40; i += num) {
-      btnList.push(<button id={i / num} className={`tagBtn ${btn.includes(i / num) ? 'Focused' : ''}`} value={tagSet[i]}
+      btnList.push(<button key={i / num} className={`tagBtn ${btn.includes(i / num) ? 'Focused' : ''}`} value={tagSet[i]}
         onClick={(e) => {
           clickFilter(e);
           focusHandler(e, i / num);

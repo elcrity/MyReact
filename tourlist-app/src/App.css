@@ -9,7 +9,7 @@
   height: 90px;
   width: 95%;
   margin: 0px auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: fixed;
 }
 
@@ -21,7 +21,7 @@
   width: minmax(1200px, 98%);
   height: auto;
   margin: 0px auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   overflow-x : hidden;
   overflow-y : hidden;
 }
@@ -30,5 +30,5 @@
   height: 100px;
   width: 95%;
   margin: 0px auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
